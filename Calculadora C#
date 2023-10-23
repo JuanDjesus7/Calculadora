@@ -1,0 +1,77 @@
+using System;
+
+namespace calculadora
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1, num2, resultado; 
+            string Operador;
+            opeador objpera = new opeador ();
+            Console.WriteLine("digite o num1: "); 
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("digite o num2: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("escolha o operador +,-,*,/: ");
+            Operador = Console.ReadLine();
+            switch (Operador)  
+            {
+                case "+":
+                    resultado = objpera.adiçao(num1, num2);
+                    Console.WriteLine("o resultado da adiçao é: " + resultado); 
+                    Console.ReadLine();
+                    break;
+                case "-":
+                     resultado = objpera.subtraçao(num1, num2);
+                    Console.WriteLine("o resultado da subtraçao e:" + resultado);
+                    Console.ReadLine();
+                    break;
+                case "/":
+                    resultado = objpera.divisao(num1, num2);
+                    Console.WriteLine("o resultado da divisao é: " + resultado);
+                    Console.ReadLine();
+                    break;
+                case "*":
+                     resultado = objpera.multi(num1, num2);
+                    Console.WriteLine("o resultado da multi é: " + resultado);
+                    Console.ReadLine();
+                    break;
+
+            }
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace calculadora
+{
+    public class opeador
+    {
+        public int adiçao(int num1, int num2)
+        {
+            int resultado = (num1 + num2); 
+            return resultado;
+        }
+        public int subtraçao(int num1, int num2)
+        {
+            int resultado = (num1 - num2);
+            return resultado;
+        }
+        public int divisao(int num1, int num2)
+        {
+            int resultado = (num1 / num2);
+            return resultado;
+        }
+        public int multi (int num1, int num2)
+        {
+            int resultado = (num1 * num2);
+            return resultado;
+        }
+    }
+}
